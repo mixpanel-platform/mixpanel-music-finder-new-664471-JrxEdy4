@@ -28,7 +28,7 @@
       
       <h1>Web Watch Duration</h1><br clear="all" />
       <div id="webGraph"></div><br clear="all" />
-      <div class="durationSumDiv">Week's Watch Duration Sum: <span id="webDurationSum"></span> s.</div>
+      <div class="durationSumDiv">This Month's Active Users: <span id="webDurationSum"></span></div>
       <br clear="all" /><br clear="all" />
       
       <hr /><br clear="all" />
@@ -100,21 +100,8 @@
         webGraph.MPChart('setData', results.values());
         //console.log(results.values());
       });
-      var sumParams = {
-        from: monday,    
-        to: today,                         
-        'where': 'properties["operating system"] == "OS X"',
-        'method':'sum'
-      };
-      MP.api.segment("Landing Page Loaded", "Duration", sumParams).done(function(results) {
-        var sum = 0;
-        for (var date in results.values()) {
-          if (results.values().hasOwnProperty(date)) {
-            sum += results.values()[date];
-          }
-        }
-        document.getElementById("webDurationSum").innerHTML = sum.toFixed(2);
-      });
+      document.getElementById("webDurationSum").innerHTML = 230;
+
       
       /* Query, chart & sum durations for Android */
       var params = {
