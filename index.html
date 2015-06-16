@@ -92,7 +92,9 @@
       /* Query, chart & sum durations for Web */
       var params = {
         from: dateRange.from,    
-        to: dateRange.to
+        to: dateRange.to,
+        type:'unique'
+        unit: 'month'
       };
       MP.api.segment("Landing Page Loaded", null, params).done(function(results) {
         webGraph.MPChart('setData', results.values());
