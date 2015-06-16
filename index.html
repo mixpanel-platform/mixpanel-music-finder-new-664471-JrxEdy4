@@ -95,9 +95,7 @@
         to: dateRange.to
       };
       MP.api.segment("Landing Page Loaded", null, params).done(function(results) {
-        var durationObject = {};
-        durationObject["Web Duration"] = results.values();
-        webGraph.MPChart('setData', durationObject);
+        webGraph.MPChart('setData', results.values());
         //console.log(results.values());
       });
       var sumParams = {
