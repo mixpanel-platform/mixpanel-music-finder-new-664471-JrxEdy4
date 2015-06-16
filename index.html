@@ -92,11 +92,9 @@
       /* Query, chart & sum durations for Web */
       var params = {
         from: dateRange.from,    
-        to: dateRange.to,                         
-        'where': 'properties["operating system"] == "OS X"',
-        'method':'sum'
+        to: dateRange.to
       };
-      MP.api.segment("Landing Page Loaded", "Duration", params).done(function(results) {
+      MP.api.segment("Landing Page Loaded", null, params).done(function(results) {
         var durationObject = {};
         durationObject["Web Duration"] = results.values();
         webGraph.MPChart('setData', durationObject);
